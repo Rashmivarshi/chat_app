@@ -29,8 +29,6 @@ import { API } from "../../api/Api";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../UserAvatar/UserListItem";
 import { getSender } from "../../config/ChatLogic";
-import NotificationBadge from "";
-import { Effect } from "react-notification-badge";
 
 const SideDrawer = () => {
   const [search, setsearch] = useState("");
