@@ -18,6 +18,11 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 app.use("/api/message", messageRoutes);
 
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    message: "Hello Developers!",
+  });
+});
 app.use(notFound);
 app.use(errorHandler);
 
