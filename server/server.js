@@ -34,7 +34,8 @@ import { Server } from "socket.io";
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://main--chatnat.netlify.app/",
+    origin: "http://localhost:3000",
+    // origin: "https://main--chatnat.netlify.app/",
   },
 });
 
