@@ -28,16 +28,23 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(5000, console.log(`server started ${PORT}`));
-
+import { createServer } from "http";
 import { Server } from "socket.io";
 
-const io = new Server(server, {
+const httpServer = createServer();
+const io = new Server(httpServer, {
   pingTimeout: 60000,
   cors: {
-    origin: "*",
-    // origin: "https://main--chatnat.netlify.app/",
+    origin: "https://main--chatnat.netlify.app",
   },
 });
+// const io = new Server(server, {
+//   pingTimeout: 60000,
+//   cors: {
+//     origin: "*",
+//     // origin: "https://main--chatnat.netlify.app/",
+//   },
+// });
 
 io.on("connection", (socket) => {
   console.log("connected to socket");
